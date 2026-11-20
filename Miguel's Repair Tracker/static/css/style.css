@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Main page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2c3956;
+    color: #f9fafb;
+}
+
+/* Dashboard header */
+.app-container {
+    padding: 30px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #374151;
+}
+
+.top-bar h1 {
+    margin: 0;
+    font-size: 28px;
+    color: hsl(198, 95%, 53%);
+}
+
+.top-bar p {
+    margin: 8px 0 0;
+    color: #9ca3af;
+}
+
+/* Sidebar navigation */
+.sidebar {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #9ca3af;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.sidebar a:hover {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+.sidebar a.active {
+    background-color: hsl(198, 95%, 53%);
+    color: #ffffff;
+}
+
+/* Dashboard content */
+.dashboard-content {
+    margin-top: 35px;
+}
+
+.dashboard-content h2 {
+    font-size: 22px;
+    color: #f9fafb;
+    margin-bottom: 20px;
+}
+
+/* Repair summary cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.stat-card h3 {
+    margin: 0;
+    color: #9ca3af;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.stat-number {
+    margin: 15px 0 8px;
+    font-size: 32px;
+    font-weight: bold;
+    color: hsl(198, 95%, 53%);
+}
+
+.stat-card span {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+/* Recent repairs section */
+.recent-repairs {
+    margin-top: 40px;
+}
+
+.recent-repairs h2 {
+    font-size: 22px;
+    color: #f9fafb;
+    margin-bottom: 20px;
+}
+
+/* Empty repairs state */
+.repairs-table {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 12px;
+    padding: 35px;
+    text-align: center;
+}
+
+.empty-message {
+    color: #9ca3af;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* New Repair button */
+.primary-button {
+    background-color: hsl(198, 95%, 53%);
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.primary-button:hover {
+    background-color: #ea580c;
+}
+
+/* Repair intake modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 14px;
+    padding: 30px;
+    width: 90%;
+    max-width: 650px;
+
+ /* Makes the form scrollable to keep from disappearing */
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+/* Close button for modal */
+.close-button {
+    float: right;
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #f97316;
+}
+
+/* Repair intake form fields */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #f9fafb;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: #111827;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    padding: 12px;
+    color: #f9fafb;
+    font-size: 14px;
+    width: 100%;
+}
+
+.form-group textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+/* Repair intake form submit button */
+#repairForm .primary-button {
+    width: 100%;
+    margin-top: 10px;
+}

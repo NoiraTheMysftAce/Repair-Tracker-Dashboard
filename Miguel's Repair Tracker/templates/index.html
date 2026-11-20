@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miguel's Repair Desk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <header class="top-bar">
+            <div>
+                <h1>Miguel's Repair Desk</h1>
+                <p>Your repair management workspace.</p>
+            </div>
+            <button class="primary-button">+ New Repair</button>
+        </header>
+        <nav class="sidebar">
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Repairs</a>
+            <a href="#">Parts & Expenses</a>
+            <a href="#">Repair History</a>
+        </nav>
+        <main class="dashboard-content">
+            <h2>Overview</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Active Repairs</h3>
+                    <p class="stat-number">0</p>
+                    <span>Currently being worked on</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Waiting for Parts</h3>
+                    <p class="stat-number">0</p>
+                    <span>Repairs awaiting components</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Ready for Pickup</h3>
+                    <p class="stat-number">0</p>
+                    <span>Repairs ready for customers</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Completed Repairs</h3>
+                    <p class="stat-number">0</p>
+                    <span>Successfully completed</span>
+                </div>
+            </div>
+            <section class="recent-repairs">
+                <h2>Recent Repairs</h2>
+                <div class="repairs-table">
+                    <p class="empty-message">No repairs have been added yet.</p>
+                </div>
+            </section>
+        </main>
+
+    </div>
+    <div class="modal" id="repairModal">
+        <div class="modal-content">
+            <button class="close-button" id="closeRepairModal">&times;</button>
+            <h2>New Repair</h2>
+            <p>Enter the details of the device being received.</p>
+
+            <form id="repairForm" method="POST"><!-- Form fields for new repair -->
+            <div class="form-group">
+                <label for="customerName">Customer Name</label>
+                <input type="text" id="customerName" name="customerName" placeholder="Enter customer name">
+            </div>
+            <div class="form-group">
+                <label for="deviceName">Device Name</label>
+                <input type="text" id="deviceName" name="deviceName" placeholder="e.g. PlayStation 5, Nintendo Switch">
+            </div>
+            <div class="form-group">
+                <label for="reportedIssue">Reported Issue</label>
+                <textarea id="reportedIssue" name="reportedIssue"
+                    placeholder="Describe the problem reported by the customer"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dateReceived">Date Received</label>
+                <input type="date" id="dateReceived" name="dateReceived">
+            </div>
+            <div class="form-group">
+                <label for="deviceCondition">Device Condition</label>
+                <textarea id="deviceCondition" name="deviceCondition"
+                    placeholder="Describe scratches, dents, missing parts, or other visible damage"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="customerPhone">Customer Phone</label>
+                <input type="tel" id="customerPhone" name="customerPhone" placeholder="Enter phone number">
+            </div>
+            <div class="form-group">
+                <label for="accessoriesReceived">Accessories Received</label>
+                <textarea id="accessoriesReceived" name="accessoriesReceived"
+                    placeholder="e.g. Power cable, HDMI cable, controller"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="serialNumber">Serial Number</label>
+                <input type="text" id="serialNumber" name="serialNumber"
+                    placeholder="Enter serial number (if available)">
+            </div>
+            <button type="submit" class="primary-button">Save Repair</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
